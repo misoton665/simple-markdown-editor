@@ -1,4 +1,9 @@
-# ibuki-web
+# Simple markdown editor
 
-This is a GUI application of "ibuki" on the Web.
+## Usage
 
+```
+$ git clone [this repository]
+$ npm run reinstall
+$ npm start
+```
