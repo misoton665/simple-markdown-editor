@@ -1,7 +1,7 @@
 import Html exposing (Html, beginnerProgram, div, h1, text, textarea)
 import Html.Attributes exposing (cols, rows, style)
 import Html.Events exposing (onInput)
-
+import Markdown
 
 (=>) = (,)
 
@@ -56,5 +56,5 @@ markdownEditingView model =
 markdownShowingView : Model -> Html Msg
 markdownShowingView model =
   div [style ["flex" => "1", "background" => "#ffffff", "height" => "100%"]] [
-      h1 [] [text "Foo!"]
-    ]
+    Markdown.toHtml [] model.markdownText
+  ]
