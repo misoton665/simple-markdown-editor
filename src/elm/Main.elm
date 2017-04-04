@@ -12,11 +12,15 @@ main = beginnerProgram {model = initialModel, update = update, view = view}
 
 type alias Model =
   {
+    markdownText: String
   }
 
 
 initialModel : Model
-initialModel = {}
+initialModel =
+  {
+    markdownText = ""
+  }
 
 
 type Msg
@@ -25,8 +29,12 @@ type Msg
 
 
 update : Msg -> Model -> Model
-update _ model =
-  model
+update msg model =
+  case msg of
+    OnTextEdited text ->
+      {model | markdownText = text}
+
+    _ -> model
 
 
 view : Model -> Html Msg
