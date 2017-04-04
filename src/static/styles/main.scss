@@ -9,6 +9,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 0;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#main {
+  height: 100%;
+}
+
 .Header {
   padding: 4px;
   background: #eeffee;
