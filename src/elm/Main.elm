@@ -1,5 +1,5 @@
-import Html exposing (Html, beginnerProgram, div, h1, text)
-import Html.Attributes exposing (style)
+import Html exposing (Html, beginnerProgram, div, h1, text, textarea)
+import Html.Attributes exposing (cols, rows, style)
 
 
 (=>) = (,)
@@ -36,8 +36,9 @@ view model =
 
 markdownEditingView : Model -> Html Msg
 markdownEditingView model =
-  div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%"]] [
-    h1 [] [text "Yay!"]
+  div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%", "padding" => "16px"]] [
+    h1 [] [text "EDITOR"]
+  , textarea [rows 20, cols 100] []
   ]
 
 markdownShowingView : Model -> Html Msg
