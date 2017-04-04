@@ -55,6 +55,6 @@ markdownEditingView model =
 
 markdownShowingView : Model -> Html Msg
 markdownShowingView model =
-  div [style ["flex" => "1", "background" => "#ffffff", "height" => "100%"]] [
+  div [style ["flex" => "1", "background" => "#ffffff", "height" => "100%", "padding" => "16px"]] [
     Markdown.toHtml [] model.markdownText
   ]
