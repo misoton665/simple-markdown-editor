@@ -47,7 +47,7 @@ view model =
 
 markdownEditingView : Model -> Html Msg
 markdownEditingView model =
-  div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%", "padding" => "16px", "display" => "flex", "flex-direction" => "column"]] [
+  div [style ["width" => "50%", "background" => "#eeeeee", "height" => "100%", "padding" => "16px", "display" => "flex", "flex-direction" => "column", "resize" => "none"]] [
     h1 [] [text "EDITOR"]
   , textarea [style ["width" => "100%", "resize" => "none", "height" => "80%", "padding" => "4px"],rows 20, cols 100, onInput OnTextEdited] []
   ]
@@ -55,7 +55,7 @@ markdownEditingView model =
 
 markdownShowingView : Model -> Html Msg
 markdownShowingView model =
-  div [style ["flex" => "1", "background" => "#ffffff", "height" => "100%", "padding" => "16px"]] [
+  div [style ["flex" => "1", "background" => "#ffffff", "height" => "100%", "padding" => "16px", "width" => "50%"]] [
     h1 [] [text "VIEWER"]
-  , Markdown.toHtml [] model.markdownText
+  , Markdown.toHtml [style ["width" => "100%", "overflow" => "scroll", "padding" => "4px", "height" => "80%", "border" => "1px solid #aaa"]] model.markdownText
   ]
