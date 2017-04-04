@@ -47,9 +47,9 @@ view model =
 
 markdownEditingView : Model -> Html Msg
 markdownEditingView model =
-  div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%", "padding" => "16px"]] [
+  div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%", "padding" => "16px", "display" => "flex", "flex-direction" => "column"]] [
     h1 [] [text "EDITOR"]
-  , textarea [rows 20, cols 100, onInput OnTextEdited] []
+  , textarea [style ["width" => "100%", "resize" => "none", "height" => "80%", "padding" => "4px"],rows 20, cols 100, onInput OnTextEdited] []
   ]
 
 
