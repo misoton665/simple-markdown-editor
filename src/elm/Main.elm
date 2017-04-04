@@ -1,5 +1,6 @@
 import Html exposing (Html, beginnerProgram, div, h1, text, textarea)
 import Html.Attributes exposing (cols, rows, style)
+import Html.Events exposing (onInput)
 
 
 (=>) = (,)
@@ -20,6 +21,7 @@ initialModel = {}
 
 type Msg
   = NoMsg
+  | OnTextEdited String
 
 
 update : Msg -> Model -> Model
@@ -34,12 +36,14 @@ view model =
   , markdownShowingView model
   ]
 
+
 markdownEditingView : Model -> Html Msg
 markdownEditingView model =
   div [style ["flex" => "1", "background" => "#eeeeee", "height" => "100%", "padding" => "16px"]] [
     h1 [] [text "EDITOR"]
-  , textarea [rows 20, cols 100] []
+  , textarea [rows 20, cols 100, onInput OnTextEdited] []
   ]
+
 
 markdownShowingView : Model -> Html Msg
 markdownShowingView model =
